@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<title>My Example</title>
+
+<!-- 
+======================================================================
+  CSS
+  - Place this in your <head> or in an external stylesheet.
+======================================================================
+-->
+<style>
+    :root {
+        /*
+            Demonstration image from Unsplash by Christina @ wocintechchat.com
+            Replace with your own professional photo.
+        */
+        --sbh-bg-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200');
+        --sbh-min-height: 500px;
+        --sbh-text-color: #374151;
+        --sbh-bg-color: #f9fafb;
+        --sbh-headline-color: #111827;
+        --sbh-cta-bg: #1f2937;
+        --sbh-cta-hover-bg: #374151;
+        --sbh-cta-text-color: #ffffff;
+    }
+    .split-bio-hero {
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--sbh-bg-color);
+    }
+    .split-bio-hero * {
+         box-sizing: border-box;
+    }
+    .split-bio-hero-image {
+        min-height: 300px; /* Provides height for the image on mobile */
+        background-image: var(--sbh-bg-image);
+        background-size: cover;
+        background-position: center 25%;
+    }
+    .split-bio-hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem;
+    }
+    .split-bio-hero-greeting {
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--sbh-headline-color);
+        margin: 0;
+    }
+    .split-bio-hero-title {
+        color: var(--sbh-headline-color);
+        margin: 0.5rem 0 1.5rem 0;
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    .split-bio-hero-bio {
+        color: var(--sbh-text-color);
+        margin: 0 0 2.5rem 0;
+        line-height: 1.6;
+        max-width: 500px;
+    }
+    .split-bio-hero-cta {
+        display: inline-block;
+        align-self: flex-start; /* Keeps button from stretching */
+        background-color: var(--sbh-cta-bg);
+        color: var(--sbh-cta-text-color);
+        padding: 0.8rem 1.8rem;
+        border-radius: 6px;
+        border: none;
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .split-bio-hero-cta:hover {
+        background-color: var(--sbh-cta-hover-bg);
+    }
+
+    @media(min-width: 768px) {
+        .split-bio-hero {
+            flex-direction: row;
+        }
+        .split-bio-hero-image,
+        .split-bio-hero-content {
+            flex: 1; /* Each takes up 50% of the width */
+            min-height: var(--sbh-min-height);
+        }
+        .split-bio-hero-content {
+            padding: 3rem 4rem;
+        }
+    }
+
+</style>
+
+<!-- 
+======================================================================
+  HTML
+  - Place this in your <body> where you want the component to appear.
+======================================================================
+-->
+<section class="split-bio-hero">
+    <div class="split-bio-hero-image" role="img" aria-label="A professional headshot of Jaxson Riptide.">
+        <!-- Background image is set in CSS -->
+    </div>
+    <div class="split-bio-hero-content">
+        <p class="split-bio-hero-greeting">Hi there, I'm Jaxson</p>
+        <h1 class="split-bio-hero-title">I help brands tell compelling stories through clean code and great design.</h1>
+        <p class="split-bio-hero-bio">
+            For over a decade, I've been a front-end developer and UI designer focused on creating intuitive, beautiful, and accessible digital experiences.
+        </p>
+        <a href="#" role="button" class="split-bio-hero-cta">Get In Touch</a>
+    </div>
+</section>
